@@ -1,0 +1,54 @@
+<div class="container">
+  <h2>API Integration Demo</h2>
+  
+  <div class="section">
+    <div class="refresh-button">
+      <button (click)="refreshData()" [disabled]="loading">
+        {{ loading ? 'Loading...' : 'Refresh Data' }}
+      </button>
+    </div>
+
+    <div *ngIf="error" class="error">
+      {{ error }}
+    </div>
+
+    <!-- Hello Message Section -->
+    <div class="hello-section" *ngIf="helloMessage">
+      <h3>Hello Message</h3>
+      <div class="message-card">
+        <p><strong>Message:</strong> {{ helloMessage.message }}</p>
+        <p><strong>Timestamp:</strong> {{ helloMessage.timestamp | date:'medium' }}</p>
+      </div>
+    </div>
+
+    <!-- Users Section -->
+    <div class="users-section">
+      <h3>Users</h3>
+      <div *ngIf="users.length > 0" class="users-grid">
+        <div *ngFor="let user of users" class="user-card">
+          <h4>{{ user.name }}</h4>
+          <p><strong>ID:</strong> {{ user.id }}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+        </div>
+      </div>
+      <div *ngIf="users.length === 0 && !loading" class="no-data">
+        No users found
+      </div>
+    </div>
+
+    <!-- Weather Forecast Section -->
+    <div class="weather-section">
+      <h3>Weather Forecast</h3>
+      <div *ngIf="weatherForecast.length > 0" class="weather-grid">
+        <div *ngFor="let forecast of weatherForecast" class="weather-card">
+          <h4>{{ forecast.date | date:'shortDate' }}</h4>
+          <p><strong>Temperature:</strong> {{ forecast.temperatureC }}°C / {{ forecast.temperatureF }}°F</p>
+          <p><strong>Summary:</strong> {{ forecast.summary }}</p>
+        </div>
+      </div>
+      <div *ngIf="weatherForecast.length === 0 && !loading" class="no-data">
+        No weather data found
+      </div>
+    </div>
+  </div>
+</div>

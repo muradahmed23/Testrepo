@@ -1,0 +1,90 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.refresh-button {
+  margin-bottom: 20px;
+}
+
+.refresh-button button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.refresh-button button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.refresh-button button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  border: 1px solid #f5c6cb;
+}
+
+.hello-section, .users-section, .weather-section {
+  margin-bottom: 40px;
+}
+
+.hello-section h3, .users-section h3, .weather-section h3 {
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.message-card {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.users-grid, .weather-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.user-card, .weather-card {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.user-card h4, .weather-card h4 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.user-card p, .weather-card p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.no-data {
+  color: #6c757d;
+  font-style: italic;
+  padding: 20px;
+  text-align: center;
+}
