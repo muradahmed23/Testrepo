@@ -24,7 +24,7 @@ export interface HelloResponse {
   providedIn: 'root'
 })
 export class ApiService {
-  private readonly baseUrl = 'https://localhost:7155'; // Default .NET 8 HTTPS port
+  private readonly baseUrl = 'http://localhost:5206'; // .NET API HTTP port
 
   constructor(private http: HttpClient) { }
 
